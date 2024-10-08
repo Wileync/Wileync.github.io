@@ -36,10 +36,42 @@
         p {
             font-size: 15px;
         }
+        .light-mode {
+            background-color: #fff;
+            color: #333;
+        }
     </style>
+    <script>
+
+	// Function to display a welcome message
+	function displayWelcomeMessage() {
+	    const name = prompt("What's your name?");
+	    if (name) {
+	        alert(`Welcome to my homepage, ${name}!`);
+	    }
+	}
+	
+	// Add event listeners when the page loads
+	window.onload = function() {
+	  	changeBackgroundColor();
+	    displayWelcomeMessage();
+	};
+    function toggleDarkMode() {
+        document.body.classList.toggle('light-mode');
+    }
+    function playBackgroundMusic() {
+        var audio = new Audio('copyright-free-background-music-no-copyright-music-216517.mp3');
+        audio.loop = true;
+        audio.play();
+    }
+    window.onload = function() {
+        playBackgroundMusic();
+    };
+</script>
 </head>
-<body>
+<body class="light-mode">
     <p class="cursive"><b>Wiley Nichols Carlin</b></p>
+    <button onclick="toggleDarkMode()">Toggle Light Mode</button>
     <hr>
     <h1 class="centered-text">Welcome to my website, enjoy yourself</h1>
     <hr>
